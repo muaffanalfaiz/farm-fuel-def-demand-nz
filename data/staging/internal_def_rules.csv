@@ -1,0 +1,8 @@
+tier,dpf_flag,scr_flag,def_required_basecase,notes
+Unregulated,0,0,0,No emissions controls
+Tier 1,0,0,0,Early basic regulated tier; no SCR
+Tier 2,0,0,0,No SCR
+Tier 3,0,0,0,No SCR
+Tier 4i,1,0,0,DPF transition stage; treat as non-DEF in base case
+Tier 4f,1,1,1,SCR-equipped base-case DEF-required tier
+Stage V,1,1,1,SCR-equipped base-case DEF-required tier
