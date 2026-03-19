@@ -1,0 +1,10 @@
+figure_file,description
+01_baseline_diesel_by_tier.png,Baseline national diesel demand by emission tier
+02_baseline_weighted_fleet_by_tier.png,Baseline weighted active licensed fleet by tier
+03_scenario_national_diesel_ml.png,Scenario comparison of national diesel demand
+04_scenario_def_central_ml.png,Scenario comparison of central DEF demand
+05_scenario_scr_share_pct.png,Scenario comparison of SCR fleet share
+06_top15_regional_diesel_ml.png,Top 15 regions by baseline diesel demand
+07_top15_regional_def_central_ml.png,Top 15 regions by baseline central DEF demand
+08_top15_def_gains_scr_push.png,Top 15 regional DEF gains under SCR push scenario
+09_top15_def_gains_accelerated_modernization.png,Top 15 regional DEF gains under accelerated modernization

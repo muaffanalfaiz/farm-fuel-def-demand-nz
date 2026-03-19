@@ -1,0 +1,6 @@
+figure_file,description
+10_forecast_national_diesel_trajectory.png,Forecast trajectory of national diesel demand by scenario
+11_forecast_central_def_trajectory.png,Forecast trajectory of central DEF demand by scenario
+12_forecast_scr_tractor_trajectory.png,Forecast trajectory of weighted SCR tractor count by scenario
+13_top15_regional_def_2030_scr_push.png,Top 15 regional central DEF demand in 2030 under scr_push
+14_top15_regional_def_2030_accelerated_modernization.png,Top 15 regional central DEF demand in 2030 under accelerated_modernization

@@ -1,0 +1,36 @@
+tiers:
+  Unregulated:
+    power_kw: 35
+    hours_per_year: 40
+    load_factor: 0.50
+    sfc_l_per_kwh: 0.28
+  Tier 1:
+    power_kw: 38
+    hours_per_year: 109
+    load_factor: 0.52
+    sfc_l_per_kwh: 0.27
+  Tier 2:
+    power_kw: 40
+    hours_per_year: 119
+    load_factor: 0.53
+    sfc_l_per_kwh: 0.26
+  Tier 3:
+    power_kw: 42
+    hours_per_year: 260
+    load_factor: 0.54
+    sfc_l_per_kwh: 0.25
+  Tier 4i:
+    power_kw: 45
+    hours_per_year: 341
+    load_factor: 0.55
+    sfc_l_per_kwh: 0.24
+  Tier 4f:
+    power_kw: 48
+    hours_per_year: 631
+    load_factor: 0.56
+    sfc_l_per_kwh: 0.23
+  Stage V:
+    power_kw: 50
+    hours_per_year: 829
+    load_factor: 0.58
+    sfc_l_per_kwh: 0.22

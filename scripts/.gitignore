@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+release/package_contents/
+release/package_contents_v2/
+release/*.zip
+
+data/raw/
+*.parquet
+
+outputs/figures/*.png

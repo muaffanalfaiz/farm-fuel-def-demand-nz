@@ -1,0 +1,5 @@
+dataset,status,path
+agri_production,missing,C:\Users\asus\OneDrive - Lincoln University\Life\Research\Farm Emission New Zealand\DEF Supply Predictive Modelling\farm-fuel-def-demand-nz-complete-internal\farm-fuel-def-demand-nz\data\raw\agriculture\agri_production_region_farmtype.csv
+farm_numbers,missing,C:\Users\asus\OneDrive - Lincoln University\Life\Research\Farm Emission New Zealand\DEF Supply Predictive Modelling\farm-fuel-def-demand-nz-complete-internal\farm-fuel-def-demand-nz\data\raw\agriculture\farm_numbers_region.csv
+farm_size,missing,C:\Users\asus\OneDrive - Lincoln University\Life\Research\Farm Emission New Zealand\DEF Supply Predictive Modelling\farm-fuel-def-demand-nz-complete-internal\farm-fuel-def-demand-nz\data\raw\agriculture\farm_size_region.csv
+registrations,missing,C:\Users\asus\OneDrive - Lincoln University\Life\Research\Farm Emission New Zealand\DEF Supply Predictive Modelling\farm-fuel-def-demand-nz-complete-internal\farm-fuel-def-demand-nz\data\raw\nzta_registrations\tractor_registrations_monthly.csv

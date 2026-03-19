@@ -1,0 +1,24 @@
+project_root: .
+raw_dir: data/raw
+staging_dir: data/staging
+marts_dir: data/marts
+exports_dir: data/exports
+outputs_dir: outputs
+
+downloads:
+  nzta_fleet_all_years: "https://wksprdgisopendata.blob.core.windows.net/motorvehicleregister/Fleet-data-all-vehicle-years.zip"
+  nzta_data_dictionary: "https://nzta.govt.nz/assets/resources/new-zealand-vehicle-fleet-open-data-sets/MVROpenData-Dictionary.csv"
+  dairynz_pdf_2023_24: "https://www.dairynz.co.nz/media/bywm13d4/dairy-statistics-2023-24.pdf"
+  beeflamb_example_class3_nni: "https://beeflambnz.com/knowledge-hub/spreadsheet/northern-north-island-class-3-hard-hill-country.xlsx"
+
+manual_sources:
+  nzta_registrations_dashboard: "Export tractor registrations from the NZTA dashboard manually."
+  statsnz_ag_production: "Download or export region / TA / farm-type tables from Stats NZ or Figure.NZ."
+  dairynz_excel_tables: "Use the DairyNZ online data explorer to export Excel tables."
+  beeflamb_survey_spreadsheets: "Download all relevant class and region spreadsheets from Beef + Lamb NZ."
+  eeca_offroad_report: "Download the EECA off-road liquid fuel insights report PDF."
+
+filenames:
+  internal_tier_summary: "data/raw/internal/tier_summary.csv"
+  internal_cohort_tier_distribution: "data/raw/internal/cohort_tier_distribution.csv"
+  internal_def_rules: "data/raw/internal/def_rules.csv"

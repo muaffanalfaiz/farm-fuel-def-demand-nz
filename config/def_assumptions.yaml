@@ -1,0 +1,8 @@
+def_ratios:
+  low: 0.03
+  central: 0.04
+  high: 0.05
+
+scr_tiers:
+  - Tier 4f
+  - Stage V
