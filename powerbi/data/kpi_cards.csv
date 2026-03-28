@@ -1,0 +1,9 @@
+metric,value,unit
+Active Licensed Fleet,31255.0,tractors
+National Diesel Demand,203.8,ML
+Central DEF Demand,2.1,ML
+SCR Tractor Count,4214.0,tractors
+SCR Diesel Demand,52.5,ML
+Regions Modelled,67.0,regions
+Admin-Bias Flags,5.0,regions
+Validation Checks Passed,7.0,of 7

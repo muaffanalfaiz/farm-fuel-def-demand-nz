@@ -1,0 +1,176 @@
+scenario_name,year,tier_assigned,weighted_tractor_count,annual_diesel_ml,scenario_label
+baseline_current_structure,2026,Unregulated,2175,8.5,Baseline
+baseline_current_structure,2026,Tier 1,964,3.3,Baseline
+baseline_current_structure,2026,Tier 2,5329,16.8,Baseline
+baseline_current_structure,2026,Tier 3,13314,96.5,Baseline
+baseline_current_structure,2026,Tier 4i,5259,26.2,Baseline
+baseline_current_structure,2026,Tier 4f,3498,38.4,Baseline
+baseline_current_structure,2026,Stage V,716,14.1,Baseline
+baseline_current_structure,2027,Unregulated,2175,8.5,Baseline
+baseline_current_structure,2027,Tier 1,964,3.3,Baseline
+baseline_current_structure,2027,Tier 2,5329,16.8,Baseline
+baseline_current_structure,2027,Tier 3,13314,96.5,Baseline
+baseline_current_structure,2027,Tier 4i,5259,26.2,Baseline
+baseline_current_structure,2027,Tier 4f,3498,38.4,Baseline
+baseline_current_structure,2027,Stage V,716,14.1,Baseline
+baseline_current_structure,2028,Unregulated,2175,8.5,Baseline
+baseline_current_structure,2028,Tier 1,964,3.3,Baseline
+baseline_current_structure,2028,Tier 2,5329,16.8,Baseline
+baseline_current_structure,2028,Tier 3,13314,96.5,Baseline
+baseline_current_structure,2028,Tier 4i,5259,26.2,Baseline
+baseline_current_structure,2028,Tier 4f,3498,38.4,Baseline
+baseline_current_structure,2028,Stage V,716,14.1,Baseline
+baseline_current_structure,2029,Unregulated,2175,8.5,Baseline
+baseline_current_structure,2029,Tier 1,964,3.3,Baseline
+baseline_current_structure,2029,Tier 2,5329,16.8,Baseline
+baseline_current_structure,2029,Tier 3,13314,96.5,Baseline
+baseline_current_structure,2029,Tier 4i,5259,26.2,Baseline
+baseline_current_structure,2029,Tier 4f,3498,38.4,Baseline
+baseline_current_structure,2029,Stage V,716,14.1,Baseline
+baseline_current_structure,2030,Unregulated,2175,8.5,Baseline
+baseline_current_structure,2030,Tier 1,964,3.3,Baseline
+baseline_current_structure,2030,Tier 2,5329,16.8,Baseline
+baseline_current_structure,2030,Tier 3,13314,96.5,Baseline
+baseline_current_structure,2030,Tier 4i,5259,26.2,Baseline
+baseline_current_structure,2030,Tier 4f,3498,38.4,Baseline
+baseline_current_structure,2030,Stage V,716,14.1,Baseline
+moderate_modernization,2026,Unregulated,2175,8.5,Moderate Modernisation
+moderate_modernization,2026,Tier 1,964,3.3,Moderate Modernisation
+moderate_modernization,2026,Tier 2,5329,16.8,Moderate Modernisation
+moderate_modernization,2026,Tier 3,13314,96.5,Moderate Modernisation
+moderate_modernization,2026,Tier 4i,5259,26.2,Moderate Modernisation
+moderate_modernization,2026,Tier 4f,3498,38.4,Moderate Modernisation
+moderate_modernization,2026,Stage V,716,14.1,Moderate Modernisation
+moderate_modernization,2027,Unregulated,2093,8.181,Moderate Modernisation
+moderate_modernization,2027,Tier 1,997,3.414,Moderate Modernisation
+moderate_modernization,2027,Tier 2,5044,15.902,Moderate Modernisation
+moderate_modernization,2027,Tier 3,12981,94.089,Moderate Modernisation
+moderate_modernization,2027,Tier 4i,5495,27.377,Moderate Modernisation
+moderate_modernization,2027,Tier 4f,3796,41.674,Moderate Modernisation
+moderate_modernization,2027,Stage V,847,16.683,Moderate Modernisation
+moderate_modernization,2028,Unregulated,2012,7.863,Moderate Modernisation
+moderate_modernization,2028,Tier 1,1031,3.528,Moderate Modernisation
+moderate_modernization,2028,Tier 2,4759,15.004,Moderate Modernisation
+moderate_modernization,2028,Tier 3,12649,91.678,Moderate Modernisation
+moderate_modernization,2028,Tier 4i,5732,28.555,Moderate Modernisation
+moderate_modernization,2028,Tier 4f,4094,44.947,Moderate Modernisation
+moderate_modernization,2028,Stage V,978,19.266,Moderate Modernisation
+moderate_modernization,2029,Unregulated,1930,7.544,Moderate Modernisation
+moderate_modernization,2029,Tier 1,1064,3.643,Moderate Modernisation
+moderate_modernization,2029,Tier 2,4474,14.106,Moderate Modernisation
+moderate_modernization,2029,Tier 3,12316,89.267,Moderate Modernisation
+moderate_modernization,2029,Tier 4i,5968,29.732,Moderate Modernisation
+moderate_modernization,2029,Tier 4f,4393,48.221,Moderate Modernisation
+moderate_modernization,2029,Stage V,1110,21.85,Moderate Modernisation
+moderate_modernization,2030,Unregulated,1849,7.225,Moderate Modernisation
+moderate_modernization,2030,Tier 1,1097,3.757,Moderate Modernisation
+moderate_modernization,2030,Tier 2,4190,13.208,Moderate Modernisation
+moderate_modernization,2030,Tier 3,11983,86.856,Moderate Modernisation
+moderate_modernization,2030,Tier 4i,6204,30.909,Moderate Modernisation
+moderate_modernization,2030,Tier 4f,4691,51.494,Moderate Modernisation
+moderate_modernization,2030,Stage V,1241,24.433,Moderate Modernisation
+accelerated_modernization,2026,Unregulated,2175,8.5,Accelerated Modernisation
+accelerated_modernization,2026,Tier 1,964,3.3,Accelerated Modernisation
+accelerated_modernization,2026,Tier 2,5329,16.8,Accelerated Modernisation
+accelerated_modernization,2026,Tier 3,13314,96.5,Accelerated Modernisation
+accelerated_modernization,2026,Tier 4i,5259,26.2,Accelerated Modernisation
+accelerated_modernization,2026,Tier 4f,3498,38.4,Accelerated Modernisation
+accelerated_modernization,2026,Stage V,716,14.1,Accelerated Modernisation
+accelerated_modernization,2027,Unregulated,2012,7.863,Accelerated Modernisation
+accelerated_modernization,2027,Tier 1,1031,3.528,Accelerated Modernisation
+accelerated_modernization,2027,Tier 2,4892,15.424,Accelerated Modernisation
+accelerated_modernization,2027,Tier 3,12682,91.919,Accelerated Modernisation
+accelerated_modernization,2027,Tier 4i,5565,27.726,Accelerated Modernisation
+accelerated_modernization,2027,Tier 4f,4094,44.947,Accelerated Modernisation
+accelerated_modernization,2027,Stage V,978,19.266,Accelerated Modernisation
+accelerated_modernization,2028,Unregulated,1849,7.225,Accelerated Modernisation
+accelerated_modernization,2028,Tier 1,1097,3.757,Accelerated Modernisation
+accelerated_modernization,2028,Tier 2,4456,14.048,Accelerated Modernisation
+accelerated_modernization,2028,Tier 3,12050,87.337,Accelerated Modernisation
+accelerated_modernization,2028,Tier 4i,5871,29.251,Accelerated Modernisation
+accelerated_modernization,2028,Tier 4f,4691,51.494,Accelerated Modernisation
+accelerated_modernization,2028,Stage V,1241,24.433,Accelerated Modernisation
+accelerated_modernization,2029,Unregulated,1686,6.588,Accelerated Modernisation
+accelerated_modernization,2029,Tier 1,1164,3.985,Accelerated Modernisation
+accelerated_modernization,2029,Tier 2,4019,12.672,Accelerated Modernisation
+accelerated_modernization,2029,Tier 3,11418,82.756,Accelerated Modernisation
+accelerated_modernization,2029,Tier 4i,6178,30.777,Accelerated Modernisation
+accelerated_modernization,2029,Tier 4f,5287,58.041,Accelerated Modernisation
+accelerated_modernization,2029,Stage V,1503,29.599,Accelerated Modernisation
+accelerated_modernization,2030,Unregulated,1523,5.95,Accelerated Modernisation
+accelerated_modernization,2030,Tier 1,1231,4.214,Accelerated Modernisation
+accelerated_modernization,2030,Tier 2,3583,11.296,Accelerated Modernisation
+accelerated_modernization,2030,Tier 3,10786,78.175,Accelerated Modernisation
+accelerated_modernization,2030,Tier 4i,6484,32.302,Accelerated Modernisation
+accelerated_modernization,2030,Tier 4f,5884,64.588,Accelerated Modernisation
+accelerated_modernization,2030,Stage V,1765,34.766,Accelerated Modernisation
+scr_push,2026,Unregulated,2175,8.5,SCR Push
+scr_push,2026,Tier 1,964,3.3,SCR Push
+scr_push,2026,Tier 2,5329,16.8,SCR Push
+scr_push,2026,Tier 3,13314,96.5,SCR Push
+scr_push,2026,Tier 4i,5259,26.2,SCR Push
+scr_push,2026,Tier 4f,3498,38.4,SCR Push
+scr_push,2026,Stage V,716,14.1,SCR Push
+scr_push,2027,Unregulated,2148,8.394,SCR Push
+scr_push,2027,Tier 1,967,3.311,SCR Push
+scr_push,2027,Tier 2,5153,16.246,SCR Push
+scr_push,2027,Tier 3,13015,94.33,SCR Push
+scr_push,2027,Tier 4i,4934,24.583,SCR Push
+scr_push,2027,Tier 4f,3972,43.603,SCR Push
+scr_push,2027,Stage V,1066,20.989,SCR Push
+scr_push,2028,Unregulated,2121,8.288,SCR Push
+scr_push,2028,Tier 1,970,3.321,SCR Push
+scr_push,2028,Tier 2,4978,15.692,SCR Push
+scr_push,2028,Tier 3,12715,92.159,SCR Push
+scr_push,2028,Tier 4i,4610,22.966,SCR Push
+scr_push,2028,Tier 4f,4446,48.807,SCR Push
+scr_push,2028,Stage V,1416,27.877,SCR Push
+scr_push,2029,Unregulated,2093,8.181,SCR Push
+scr_push,2029,Tier 1,973,3.332,SCR Push
+scr_push,2029,Tier 2,4802,15.138,SCR Push
+scr_push,2029,Tier 3,12416,89.989,SCR Push
+scr_push,2029,Tier 4i,4285,21.35,SCR Push
+scr_push,2029,Tier 4f,4920,54.01,SCR Push
+scr_push,2029,Stage V,1765,34.766,SCR Push
+scr_push,2030,Unregulated,2066,8.075,SCR Push
+scr_push,2030,Tier 1,976,3.342,SCR Push
+scr_push,2030,Tier 2,4626,14.584,SCR Push
+scr_push,2030,Tier 3,12116,87.819,SCR Push
+scr_push,2030,Tier 4i,3961,19.733,SCR Push
+scr_push,2030,Tier 4f,5394,59.214,SCR Push
+scr_push,2030,Stage V,2115,41.654,SCR Push
+delayed_replacement,2026,Unregulated,2175,8.5,Delayed Replacement
+delayed_replacement,2026,Tier 1,964,3.3,Delayed Replacement
+delayed_replacement,2026,Tier 2,5329,16.8,Delayed Replacement
+delayed_replacement,2026,Tier 3,13314,96.5,Delayed Replacement
+delayed_replacement,2026,Tier 4i,5259,26.2,Delayed Replacement
+delayed_replacement,2026,Tier 4f,3498,38.4,Delayed Replacement
+delayed_replacement,2026,Stage V,716,14.1,Delayed Replacement
+delayed_replacement,2027,Unregulated,2148,8.394,Delayed Replacement
+delayed_replacement,2027,Tier 1,967,3.311,Delayed Replacement
+delayed_replacement,2027,Tier 2,5153,16.246,Delayed Replacement
+delayed_replacement,2027,Tier 3,13347,96.742,Delayed Replacement
+delayed_replacement,2027,Tier 4i,5294,26.374,Delayed Replacement
+delayed_replacement,2027,Tier 4f,3586,39.363,Delayed Replacement
+delayed_replacement,2027,Stage V,760,14.961,Delayed Replacement
+delayed_replacement,2028,Unregulated,2121,8.288,Delayed Replacement
+delayed_replacement,2028,Tier 1,970,3.321,Delayed Replacement
+delayed_replacement,2028,Tier 2,4978,15.692,Delayed Replacement
+delayed_replacement,2028,Tier 3,13381,96.984,Delayed Replacement
+delayed_replacement,2028,Tier 4i,5329,26.548,Delayed Replacement
+delayed_replacement,2028,Tier 4f,3674,40.327,Delayed Replacement
+delayed_replacement,2028,Stage V,803,15.822,Delayed Replacement
+delayed_replacement,2029,Unregulated,2093,8.181,Delayed Replacement
+delayed_replacement,2029,Tier 1,973,3.332,Delayed Replacement
+delayed_replacement,2029,Tier 2,4802,15.138,Delayed Replacement
+delayed_replacement,2029,Tier 3,13414,97.227,Delayed Replacement
+delayed_replacement,2029,Tier 4i,5364,26.722,Delayed Replacement
+delayed_replacement,2029,Tier 4f,3761,41.29,Delayed Replacement
+delayed_replacement,2029,Stage V,847,16.683,Delayed Replacement
+delayed_replacement,2030,Unregulated,2066,8.075,Delayed Replacement
+delayed_replacement,2030,Tier 1,976,3.342,Delayed Replacement
+delayed_replacement,2030,Tier 2,4626,14.584,Delayed Replacement
+delayed_replacement,2030,Tier 3,13448,97.469,Delayed Replacement
+delayed_replacement,2030,Tier 4i,5399,26.896,Delayed Replacement
+delayed_replacement,2030,Tier 4f,3849,42.253,Delayed Replacement
+delayed_replacement,2030,Stage V,891,17.544,Delayed Replacement

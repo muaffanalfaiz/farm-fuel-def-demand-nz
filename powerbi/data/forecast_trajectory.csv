@@ -1,0 +1,26 @@
+scenario_name,year,national_weighted_fleet,national_diesel_ml,national_scr_tractor_count,national_scr_diesel_ml,def_low_ml,def_central_ml,def_high_ml,scenario_label
+baseline_current_structure,2026,31255,203.8,4214,52.50002530848554,1.575,2.1,2.625,Baseline
+baseline_current_structure,2027,31255,203.8,4214,52.50002530848554,1.575,2.1,2.625,Baseline
+baseline_current_structure,2028,31255,203.8,4214,52.50002530848554,1.575,2.1,2.625,Baseline
+baseline_current_structure,2029,31255,203.8,4214,52.50002530848554,1.575,2.1,2.625,Baseline
+baseline_current_structure,2030,31255,203.8,4214,52.50002530848554,1.575,2.1,2.625,Baseline
+moderate_modernization,2026,31255,203.8,4214,52.50002530848554,1.575,2.1,2.625,Moderate Modernisation
+moderate_modernization,2027,31255,207.321,4643,58.35677111146158,1.751,2.334,2.918,Moderate Modernisation
+moderate_modernization,2028,31255,210.841,5073,64.21351691443762,1.926,2.569,3.211,Moderate Modernisation
+moderate_modernization,2029,31255,214.362,5502,70.07026271741368,2.102,2.803,3.504,Moderate Modernisation
+moderate_modernization,2030,31255,217.882,5932,75.92700852038972,2.278,3.037,3.796,Moderate Modernisation
+accelerated_modernization,2026,31255,203.8,4214,52.50002530848554,1.575,2.1,2.625,Accelerated Modernisation
+accelerated_modernization,2027,31255,210.673,5073,64.21351691443762,1.926,2.569,3.211,Accelerated Modernisation
+accelerated_modernization,2028,31255,217.545,5932,75.92700852038972,2.278,3.037,3.796,Accelerated Modernisation
+accelerated_modernization,2029,31255,224.418,6790,87.64050012634182,2.629,3.506,4.382,Accelerated Modernisation
+accelerated_modernization,2030,31255,231.29,7649,99.35399173229392,2.981,3.974,4.968,Accelerated Modernisation
+scr_push,2026,31255,203.8,4214,52.50002530848554,1.575,2.1,2.625,SCR Push
+scr_push,2027,31255,211.455,5038,64.59197599854859,1.938,2.584,3.23,SCR Push
+scr_push,2028,31255,219.11,5862,76.68392668861166,2.301,3.067,3.834,SCR Push
+scr_push,2029,31255,226.765,6685,88.7758773786747,2.663,3.551,4.439,SCR Push
+scr_push,2030,31255,234.421,7509,100.86782806873777,3.026,4.035,5.043,SCR Push
+delayed_replacement,2026,31255,203.8,4214,52.50002530848554,1.575,2.1,2.625,Delayed Replacement
+delayed_replacement,2027,31255,205.391,4345,54.324383438945816,1.63,2.173,2.716,Delayed Replacement
+delayed_replacement,2028,31255,206.982,4477,56.1487415694061,1.684,2.246,2.807,Delayed Replacement
+delayed_replacement,2029,31255,208.573,4608,57.97309969986638,1.739,2.319,2.899,Delayed Replacement
+delayed_replacement,2030,31255,210.164,4740,59.79745783032667,1.794,2.392,2.99,Delayed Replacement
