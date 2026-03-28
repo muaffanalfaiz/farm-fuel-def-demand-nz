@@ -1,102 +1,216 @@
-# Farm Fuel & DEF Demand � New Zealand
+# Register-Informed Tractor Diesel & DEF Demand Model
 
-A register-informed, cohort-constrained, tier-calibrated analytical pipeline for estimating New Zealand tractor diesel demand and Diesel Exhaust Fluid (DEF) demand, with regional allocation, structural scenario analysis, and a 2026-2030 forecast.
+### New Zealand National Fleet
 
-## Methodology
+> **If New Zealand's tractor fleet modernises toward cleaner emission tiers, how much Diesel Exhaust Fluid will the agricultural sector need — and where?**
+> This project builds a calibrated answer using NZTA fleet data, emission tier engineering, and structural scenario analysis.
 
-This model uses NZTA Motor Vehicle Register records as a geographic template for New Zealand's diesel tractor fleet. Rather than treating raw register counts as ground truth, the pipeline imposes independently calibrated active-licensed fleet totals by age cohort, applies cohort-to-emission-tier shares, and derives tier-specific fuel consumption from calibrated activity factors (power, hours, load factor, SFC). National diesel and DEF demand are then allocated regionally using the register's geographic distribution. Five structural scenarios explore how fleet modernisation toward SCR-equipped tiers would shift diesel and DEF demand through 2030.
+[![Python](https://img.shields.io/badge/Python-3.11+-blue?style=flat-square)](https://python.org)
+[![Pandas](https://img.shields.io/badge/Pandas-2.0+-green?style=flat-square)](https://pandas.pydata.org)
+[![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-yellow?style=flat-square)](powerbi/)
+[![Manuscript](https://img.shields.io/badge/Manuscript-In%20Preparation-lightgrey?style=flat-square)](docs/)
 
-## Baseline Results
+---
+
+## The problem
+
+New Zealand has no published dataset that directly measures how much diesel its ~31,000 active tractor fleet consumes, let alone how much DEF (AdBlue) is needed as newer SCR-equipped engines replace older tiers. Fleet modernisation is happening, but the demand implications for fuel distributors, farm supply chains, and emissions policy are unquantified at the regional level.
+
+**This project asks:** can we estimate current diesel and DEF demand from the fleet register structure, and project how that demand shifts under different modernisation scenarios through 2030?
+
+---
+
+## What I built
+
+A register-informed, cohort-constrained, tier-calibrated estimation pipeline that works in three layers:
+
+| Layer | What it does | Data source |
+|---|---|---|
+| Geographic template | Uses raw NZTA diesel tractor registrations as a spatial scaffolding across 67 regions | NZTA Motor Vehicle Register |
+| Calibration constraint | Imposes independently calibrated active-licensed fleet totals by age cohort and emission tier | Internal tractor-engine-standard report |
+| Fuel & DEF estimation | Derives tier-specific fuel intensity from power, hours, load factor, and SFC; applies DEF ratios to SCR tiers | Calibrated activity factors |
+
+This design avoids naïvely counting raw register rows as active tractors. Instead, the register provides geographic shares while calibrated totals control the national fleet and fuel numbers — a stronger research approach than direct register counting.
+
+---
+
+## Key findings
+
+### Calibrated baseline (current fleet structure)
 
 | Metric | Value |
-|---|---:|
-| Active licensed weighted fleet | 31,255 |
-| National diesel demand | 203.800 ML |
-| Weighted SCR tractor count | 4,214 |
-| SCR diesel demand | 52.500 ML |
-| DEF demand (low / central / high) | 1.575 / 2.100 / 2.625 ML |
-| Top diesel region | Auckland (16.628 ML) |
+|---|---|
+| Active licensed weighted fleet | **31,255** tractors |
+| National diesel demand | **203.8 ML** |
+| SCR-equipped tractor count (Tier 4f + Stage V) | **4,214** (13.5% of fleet) |
+| Central DEF demand | **2.100 ML** |
+| DEF demand range (low / high) | 1.575 – 2.625 ML |
+| Top diesel region | Auckland (16.6 ML) |
+| Regions modelled | 67 |
+| Internal validation checks passed | 7 of 7 |
 
-## Scenarios (2030 endpoints)
+### Tier structure — where the diesel goes
 
-| Scenario | Diesel (ML) | Central DEF (ML) | SCR fleet |
+| Tier | Fleet | Diesel (ML) | Share of national diesel |
 |---|---:|---:|---:|
-| Baseline (current structure) | 203.800 | 2.100 | 4,214 |
-| Moderate modernisation | 217.882 | 3.037 | 5,932 |
-| Accelerated modernisation | 231.290 | 3.974 | 7,649 |
-| SCR push | 234.421 | 4.035 | 7,509 |
-| Delayed replacement | 210.164 | 2.392 | 4,740 |
+| Tier 3 | 13,314 | 96.5 | 47.4% |
+| Tier 4f | 3,498 | 38.4 | 18.8% |
+| Tier 4i | 5,259 | 26.2 | 12.9% |
+| Tier 2 | 5,329 | 16.8 | 8.2% |
+| Stage V | 716 | 14.1 | 6.9% |
+| Unregulated | 2,175 | 8.5 | 4.2% |
+| Tier 1 | 964 | 3.3 | 1.6% |
 
-## Pipeline
+Tier 3 alone accounts for nearly half of all tractor diesel demand despite being 43% of the fleet — a consequence of higher activity hours on mid-tier commercial tractors.
 
-Run `python run_all.py` to execute the full canonical pipeline, or run scripts individually in this order:
+### Scenario analysis — what happens as the fleet modernises?
 
-| # | Script | Purpose |
+Five structural scenarios redistribute the fleet across emission tiers while holding total fleet size fixed:
+
+| Scenario | Diesel (ML) | Central DEF (ML) | SCR fleet share |
+|---|---:|---:|---:|
+| Baseline (current structure) | 203.8 | 2.100 | 13.5% |
+| Moderate modernisation | 217.9 | 3.037 | 19.0% |
+| Accelerated modernisation | 231.3 | 3.974 | 24.5% |
+| **SCR push** | **234.4** | **4.035** | **24.0%** |
+| Delayed replacement | 210.2 | 2.392 | 15.2% |
+
+Under an SCR push scenario, DEF demand nearly doubles from 2.1 to 4.0 ML — a 92% increase driven entirely by fleet composition shifts, not fleet growth.
+
+### 2026–2030 structural forecast
+
+The forecast linearly interpolates from baseline to each scenario endpoint, preserving total weighted fleet:
+
+| Scenario (2030) | Diesel (ML) | Central DEF (ML) | SCR tractors |
+|---|---:|---:|---:|
+| Baseline (flat) | 203.8 | 2.100 | 4,214 |
+| Moderate modernisation | 217.9 | 3.037 | 5,932 |
+| Accelerated modernisation | 231.3 | 3.974 | 7,649 |
+| SCR push | 234.4 | 4.035 | 7,509 |
+| Delayed replacement | 210.2 | 2.392 | 4,740 |
+
+This is a scenario-based structural projection, not a time-series forecast trained on historical fuel purchases. See `docs/06_prediction_note.md` for full methodology.
+
+### Geography QA
+
+The pipeline flags 5 regions as potential administrative-bias locations where tractor registrations concentrate at dealerships rather than on farms: Auckland, Christchurch City, Hamilton City, Palmerston North City, and Invercargill City. Regional outputs should be interpreted as allocated demand surfaces, not direct operating-location fuel consumption.
+
+---
+
+## Repository structure
+
+```
+farm-fuel-def-demand-nz/
+│
+├── README.md
+├── CITATION.cff
+├── run_all.py                         # Canonical pipeline orchestrator
+│
+├── config/
+│   ├── paths.yaml                     # Data source URLs and file paths
+│   ├── def_assumptions.yaml           # DEF ratio assumptions (3%/4%/5%)
+│   └── activity_factors.yaml          # Tier-specific power, hours, load, SFC
+│
+├── data/
+│   ├── staging/                       # Standardised internal calibration tables
+│   ├── exports/                       # NZTA tractor sample CSV
+│   └── reference/                     # TA-region lookup
+│
+├── scripts/
+│   ├── 00–03                          # Data acquisition and parsing
+│   ├── 05–07                          # Tier assignment, diesel, DEF estimation
+│   ├── 08–12                          # Summary, validation, regional master, QA
+│   ├── 13–15                          # External templates, scenarios, comparison
+│   ├── 16–19                          # Dashboard export, figures, narratives, release
+│   └── 20–22                          # Forecast, forecast figures, prediction note
+│
+├── outputs/
+│   ├── tables/                        # Core analytical tables and validation checks
+│   ├── scenarios/                     # 5 scenario national/regional summaries
+│   ├── forecast/                      # 2026–2030 forecast tables
+│   └── figures/                       # Generated PNG charts
+│
+├── dashboard/                         # Dashboard-ready CSVs for Power BI
+├── powerbi/                           # Power BI .pbix file and screenshots
+├── docs/                              # Auto-generated methods, findings, limitations
+└── release/                           # Release manifest and packaging
+```
+
+---
+
+## How to reproduce
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/muaffanalfaiz/farm-fuel-def-demand-nz.git
+cd farm-fuel-def-demand-nz
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run the full pipeline
+python run_all.py
+
+# Or resume from a specific step
+python run_all.py --from 14
+```
+
+The pipeline expects Python 3.11+. The NZTA fleet file is auto-downloaded. Some supplementary sources (Stats NZ, DairyNZ, Beef+Lamb, EECA) require manual download — see `config/paths.yaml`.
+
+---
+
+## Dashboard
+
+A 4-page Power BI dashboard provides interactive exploration:
+
+- **Fleet & Fuel Overview** — 6 KPI cards, diesel and fleet by emission tier
+- **Regional Analysis** — top regions by diesel and DEF demand, admin-bias flags
+- **Scenario Comparison** — diesel, DEF, and SCR share across 5 modernisation pathways
+- **Forecast 2026–2030** — trajectory line charts for diesel, DEF, and SCR fleet
+
+*Dashboard `.pbix` file and screenshots in `powerbi/`.*
+
+---
+
+## Data sources
+
+| Source | Coverage | Access |
 |---|---|---|
-| 00 | `00_build_internal_files_from_report_extract.py` | Bootstrap calibrated tier/cohort/DEF tables from report extract |
-| 01 | `01_download_data.py` | Download NZTA fleet ZIP and public data sources |
-| 02 | `02_prepare_internal_tables.py` | Standardise internal calibration CSVs |
-| 03 | `03_parse_nzta_fleet.py` | Parse NZTA fleet, filter to diesel tractors |
-| 05 | `05_assign_tiers.py` | Assign emission tiers via cohort-constrained weighting |
-| 06 | `06_estimate_diesel.py` | Estimate diesel demand by tier and region |
-| 07 | `07_estimate_def.py` | Estimate DEF demand for SCR-equipped tiers |
-| 08 | `08_build_summary.py` | Build project summary comparing outputs to calibration |
-| 09 | `09_validate_outputs.py` | Run internal consistency checks |
-| 10 | `10_build_regional_master_table.py` | Merge regional fleet, diesel, DEF, and tier-wide tables |
-| 11 | `11_build_feature_store.py` | Build regional feature store with engineered metrics |
-| 12 | `12_geography_qa.py` | Flag administrative-bias and urban-registration regions |
-| 13 | `13_prepare_external_templates.py` | Create scaffolding for optional external data joins |
-| 14 | `14_run_scenarios.py` | Run five tier-transition scenarios |
-| 15 | `15_scenario_summary.py` | Compute scenario vs baseline deltas |
-| 16 | `16_export_dashboard.py` | Export dashboard-ready CSVs |
-| 17 | `17_make_figures.py` | Generate baseline and scenario charts |
-| 18 | `18_write_narratives.py` | Auto-generate methods, findings, and limitations docs |
-| 19 | `19_pack_release.py` | Package tables, figures, and docs into a release ZIP |
-| 20 | `20_run_forecast.py` | Run 2026-2030 structural forecast by scenario |
-| 21 | `21_make_forecast_figures.py` | Generate forecast trajectory charts |
-| 22 | `22_write_prediction_note.py` | Auto-generate the prediction note |
+| [NZTA Motor Vehicle Register](https://opendata-nzta.opendata.arcgis.com/) | All registered vehicles, NZ | Public (auto-downloaded) |
+| Internal tractor-engine-standard report | Calibrated tier/cohort/fuel totals | Extracted in `scripts/00_build_internal_files_from_report_extract.py` |
+| [DairyNZ Statistics 2023-24](https://www.dairynz.co.nz/) | Dairy farm structure | Public PDF (auto-downloaded) |
+| [Beef + Lamb NZ](https://beeflambnz.com/) | Sheep/beef farm economics | Public spreadsheets (manual) |
+| [Stats NZ / Figure.NZ](https://figure.nz/) | Agricultural production by region | Public (manual) |
+| [EECA](https://www.eeca.govt.nz/) | Off-road liquid fuel report | Public (manual) |
 
-## Project Structure
+---
 
-`
-config/                  Configuration YAML (paths, DEF ratios, activity factors)
-data/
-  staging/               Standardised internal calibration tables
-  exports/               NZTA tractor sample CSV
-  reference/             TA-region lookup (placeholder)
-dashboard/               Dashboard-ready CSVs for Power BI / Tableau
-docs/                    Auto-generated narrative documents
-outputs/
-  tables/                Core analytical tables and validation checks
-  scenarios/             Scenario national and regional summaries
-  forecast/              2026-2030 forecast tables
-  figures/               Generated PNG charts
-release/                 Release manifest and packaging
-scripts/                 Canonical pipeline scripts
-`
+## Limitations
 
-## Data Sources
+- **Regional outputs are allocated demand surfaces**, not direct on-farm fuel measurements. See `docs/03_limitations.md`.
+- **The forecast is scenario-based structural projection**, not a time-series model. It assumes fixed fleet size and uses linear interpolation between baseline and scenario endpoints.
+- **DEF ratios (3%/4%/5% of SCR diesel)** are assumption-driven, not learned from observed DEF purchases. Real-world variation may be wider.
+- **Activity hours increase monotonically with tier** (40 hrs/yr for Unregulated to 829 hrs/yr for Stage V), reflecting the assumption that newer tractors go to larger, more intensive operations. This is the single most influential assumption in the model.
+- **5 regions flagged for administrative bias** — registration geography may not reflect operating geography.
 
-| Source | Type | Access |
-|---|---|---|
-| NZTA Motor Vehicle Register | Public | Auto-downloaded (`01_download_data.py`) |
-| Internal tractor-engine-standard report | Calibration | Extracted in `00_build_internal_files_from_report_extract.py` |
-| DairyNZ Statistics 2023-24 | Public | Auto-downloaded |
-| Beef + Lamb NZ survey spreadsheets | Public | Manual download |
-| Stats NZ / Figure.NZ agriculture tables | Public | Manual download |
-| EECA off-road fuel report | Public | Manual download |
+---
 
-## Important Caveats
+## Publication status
 
-- **Regional outputs are allocated demand surfaces**, not direct measured operating-location fuel consumption. See `docs/03_limitations.md`.
-- **The forecast is scenario-based structural projection**, not a historical time-series model. See `docs/06_prediction_note.md`.
-- **Geography QA** flags 5 regions as possible administrative-bias locations (Auckland, Christchurch, Hamilton, Palmerston North, Invercargill).
+Manuscript in preparation.
+Developed in collaboration with Dr Majeed Safa, Lincoln University, New Zealand.
 
-## Requirements
+---
 
-- Python 3.11+
-- Install dependencies: `pip install -r requirements.txt`
+## About
 
-## License
+Built by **Muaffan Alfaiz Wisaksono**
+MSc Precision Agriculture (with High Distinction), Lincoln University, New Zealand
+LPDP Scholar | GIS Analyst | Precision Agriculture Researcher
+8× Scopus-indexed publications
 
-This project is provided for research and portfolio purposes.
+[LinkedIn](https://linkedin.com/in/muaffanalfaiz) · [GitHub](https://github.com/muaffanalfaiz)
+
+---
+
+*This project is part of a portfolio demonstrating applied geospatial data science for agricultural resource estimation, scenario modelling, and decision-support systems.*
