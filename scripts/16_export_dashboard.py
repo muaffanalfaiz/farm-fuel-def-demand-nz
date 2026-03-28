@@ -18,13 +18,11 @@ def main() -> None:
         ("outputs/tables/regional_feature_store.csv", "dashboard/regional_feature_store.csv"),
         ("outputs/tables/geography_qa_summary.csv", "dashboard/geography_qa_summary.csv"),
         ("outputs/tables/geography_qa_flags.csv", "dashboard/geography_qa_flags.csv"),
-
         ("outputs/scenarios/scenario_national_summary.csv", "dashboard/scenario_national_summary.csv"),
         ("outputs/scenarios/scenario_national_compare.csv", "dashboard/scenario_national_compare.csv"),
         ("outputs/scenarios/scenario_regional_summary.csv", "dashboard/scenario_regional_summary.csv"),
         ("outputs/scenarios/scenario_regional_compare.csv", "dashboard/scenario_regional_compare.csv"),
         ("outputs/scenarios/scenario_top_regional_def_gains.csv", "dashboard/scenario_top_regional_def_gains.csv"),
-
         ("outputs/forecast/forecast_national_annual.csv", "dashboard/forecast_national_annual.csv"),
         ("outputs/forecast/forecast_national_by_tier_annual.csv", "dashboard/forecast_national_by_tier_annual.csv"),
         ("outputs/forecast/forecast_regional_annual.csv", "dashboard/forecast_regional_annual.csv"),

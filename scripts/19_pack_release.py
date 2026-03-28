@@ -20,9 +20,7 @@ def copy_file(src: Path, dst: Path, manifest_rows: list[dict]) -> None:
         manifest_rows.append({"source": str(src.relative_to(ROOT)), "destination": str(dst.relative_to(ROOT)), "status": "missing"})
 
 def main() -> None:
-    release_dir = p("release/package_contents")
-    if release_dir.exists():
-        shutil.rmtree(release_dir)
+    release_dir = p("release/package_contents_v2")
     ensure_dir(release_dir)
 
     manifest_rows = []
@@ -64,18 +62,18 @@ def main() -> None:
             copy_file(fig, release_dir / "outputs/figures" / fig.name, manifest_rows)
 
     manifest = pd.DataFrame(manifest_rows)
-    manifest.to_csv(p("release/release_manifest.csv"), index=False)
+    manifest.to_csv(p("release/release_manifest_v2.csv"), index=False)
 
-    archive_base = p("release/farm-fuel-def-demand-nz_release")
-    zip_path = p("release/farm-fuel-def-demand-nz_release.zip")
+    archive_base = p("release/farm-fuel-def-demand-nz_release_v2")
+    zip_path = p("release/farm-fuel-def-demand-nz_release_v2.zip")
     if zip_path.exists():
         zip_path.unlink()
     shutil.make_archive(str(archive_base), "zip", root_dir=release_dir)
 
-    print("Release package refreshed:")
-    print("- release/package_contents/")
-    print("- release/release_manifest.csv")
-    print("- release/farm-fuel-def-demand-nz_release.zip")
+    print("Release package v2 created:")
+    print("- release/package_contents_v2/")
+    print("- release/release_manifest_v2.csv")
+    print("- release/farm-fuel-def-demand-nz_release_v2.zip")
 
 if __name__ == "__main__":
     main()

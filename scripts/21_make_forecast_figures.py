@@ -49,72 +49,39 @@ def main() -> None:
     figure_rows = []
 
     out = fig_dir / "10_forecast_national_diesel_trajectory.png"
-    save_line(
-        forecast_nat,
-        "year",
-        "national_diesel_ml",
-        "scenario_name",
-        "Forecast 2026-2030: National Diesel Demand",
-        "National diesel (ML)",
-        out,
-    )
+    save_line(forecast_nat, "year", "national_diesel_ml", "scenario_name",
+              "Forecast 2026-2030: National Diesel Demand", "National diesel (ML)", out)
     figure_rows.append({"figure_file": out.name, "description": "Forecast trajectory of national diesel demand by scenario"})
 
     out = fig_dir / "11_forecast_central_def_trajectory.png"
-    save_line(
-        forecast_nat,
-        "year",
-        "def_central_ml",
-        "scenario_name",
-        "Forecast 2026-2030: Central DEF Demand",
-        "Central DEF demand (ML)",
-        out,
-    )
+    save_line(forecast_nat, "year", "def_central_ml", "scenario_name",
+              "Forecast 2026-2030: Central DEF Demand", "Central DEF demand (ML)", out)
     figure_rows.append({"figure_file": out.name, "description": "Forecast trajectory of central DEF demand by scenario"})
 
     out = fig_dir / "12_forecast_scr_tractor_trajectory.png"
-    save_line(
-        forecast_nat,
-        "year",
-        "national_scr_tractor_count",
-        "scenario_name",
-        "Forecast 2026-2030: SCR Tractor Count",
-        "Weighted SCR tractor count",
-        out,
-    )
+    save_line(forecast_nat, "year", "national_scr_tractor_count", "scenario_name",
+              "Forecast 2026-2030: SCR Tractor Count", "Weighted SCR tractor count", out)
     figure_rows.append({"figure_file": out.name, "description": "Forecast trajectory of weighted SCR tractor count by scenario"})
 
     region_key = "region_key"
 
     tmp = forecast_reg.loc[forecast_reg["scenario_name"] == "scr_push"].sort_values("regional_def_central_ml", ascending=False).copy()
     out = fig_dir / "13_top15_regional_def_2030_scr_push.png"
-    save_barh(
-        tmp,
-        region_key,
-        "regional_def_central_ml",
-        "Top 15 Regional DEF Demand in 2030: scr_push",
-        "Regional central DEF demand (ML)",
-        out,
-        top_n=15,
-    )
+    save_barh(tmp, region_key, "regional_def_central_ml",
+              "Top 15 Regional DEF Demand in 2030: scr_push",
+              "Regional central DEF demand (ML)", out, top_n=15)
     figure_rows.append({"figure_file": out.name, "description": "Top 15 regional central DEF demand in 2030 under scr_push"})
 
     tmp = forecast_reg.loc[forecast_reg["scenario_name"] == "accelerated_modernization"].sort_values("regional_def_central_ml", ascending=False).copy()
     out = fig_dir / "14_top15_regional_def_2030_accelerated_modernization.png"
-    save_barh(
-        tmp,
-        region_key,
-        "regional_def_central_ml",
-        "Top 15 Regional DEF Demand in 2030: accelerated_modernization",
-        "Regional central DEF demand (ML)",
-        out,
-        top_n=15,
-    )
+    save_barh(tmp, region_key, "regional_def_central_ml",
+              "Top 15 Regional DEF Demand in 2030: accelerated_modernization",
+              "Regional central DEF demand (ML)", out, top_n=15)
     figure_rows.append({"figure_file": out.name, "description": "Top 15 regional central DEF demand in 2030 under accelerated_modernization"})
 
     pd.DataFrame(figure_rows).to_csv(p("outputs/figures/forecast_figure_manifest.csv"), index=False)
 
-    print("Forecast figures refreshed:")
+    print("Forecast figures created:")
     for row in figure_rows:
         print(f"- {row['figure_file']}: {row['description']}")
 

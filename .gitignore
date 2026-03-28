@@ -11,4 +11,5 @@ release/*.zip
 data/raw/
 *.parquet
 
-outputs/figures/*.png
+# Legacy/superseded scripts kept for reference
+scripts/legacy/

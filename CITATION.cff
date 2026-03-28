@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+title: "Farm Fuel and DEF Demand Model - New Zealand"
+message: "If you use this project, please cite it as below."
+type: software
+authors:
+  - family-names: Wisaksono
+    given-names: Muaffan Alfaiz
+    orcid: ""
+date-released: "2025-01-01"
+url: "https://github.com/muaffanalfaiz/farm-fuel-def-demand-nz"
+repository-code: "https://github.com/muaffanalfaiz/farm-fuel-def-demand-nz"
+abstract: >-
+  A register-informed, cohort-constrained, tier-calibrated pipeline for
+  estimating New Zealand tractor diesel and DEF demand with regional
+  allocation, structural scenario analysis, and 2026-2030 forecast.
+keywords:
+  - diesel demand
+  - DEF demand
+  - tractor fleet
+  - emission tiers
+  - New Zealand
+  - scenario analysis
+references:
+  - type: data
+    title: "NZTA Motor Vehicle Register - Fleet Data All Vehicle Years"
+    url: "https://opendata-nzta.opendata.arcgis.com/"
+    authors:
+      - name: "New Zealand Transport Agency (NZTA)"
+  - type: report
+    title: "DairyNZ New Zealand Dairy Statistics 2023-24"
+    url: "https://www.dairynz.co.nz/"
+    authors:
+      - name: "DairyNZ"
+  - type: data
+    title: "Beef + Lamb NZ Economic Service Survey Data"
+    url: "https://beeflambnz.com/"
+    authors:
+      - name: "Beef + Lamb New Zealand"
+  - type: report
+    title: "EECA Off-Road Liquid Fuel Insights"
+    url: "https://www.eeca.govt.nz/"
+    authors:
+      - name: "Energy Efficiency and Conservation Authority (EECA)"

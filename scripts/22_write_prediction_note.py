@@ -62,7 +62,7 @@ Under the current calibrated assumptions, stronger modernization and SCR adoptio
 """
     (docs_dir / "06_prediction_note.md").write_text(text, encoding="utf-8")
 
-    print("Prediction note created:")
+    print("Prediction note refreshed:")
     print("- docs/06_prediction_note.md")
 
 if __name__ == "__main__":
